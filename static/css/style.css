@@ -1,0 +1,57 @@
+body { background-color: #ffffff; color: #0f172a; }
+.soft-shadow { box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05); }
+.premium-border { border: 1px solid #f1f5f9; }
+.btn-gradient { 
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+    box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+}
+.text-balance { text-wrap: balance; }
+
+.step-content, .success-content { display: none; }
+.step-content.active, .success-content.active { display: block; animation: slideIn 0.3s ease-out; }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+input[type="radio"]:checked + label {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+    box-shadow: 0 0 0 1px #2563eb;
+}
+
+.input-error { border-color: #ef4444 !important; background-color: #fef2f2; }
+
+@keyframes success-circle {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    80% { transform: scale(0.95); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.SVG-success-check path {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: success-check-draw 0.8s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes success-check-draw {
+    to { stroke-dashoffset: 0; }
+}
